@@ -7,8 +7,10 @@
 	add_duds(duds_number) // Duds also explode here.
 	..()
 
-/datum/wires/explosive/on_pulse(index)
-	explode()
+/datum/wires/explosive/on_pulse(index, source)
+	if (!isnull(source))
+		log_combat(source, holder, "sent a pulse signal to")
+        explode()
 
 /datum/wires/explosive/on_cut(index, mend, source)
 	if (!isnull(source))
