@@ -165,8 +165,10 @@
 		manual_suicide(suicider)
 		return
 
-	// If the holder is a TTV, we want to store the last received signal to incorporate it into TTV logging, else wipe it.
+	// If the holder is a explosive, we want to store the last received signal to incorporate it into explosive logging, else wipe it.
 	last_receive_signal_log = istype(holder, /obj/item/transfer_valve) ? signal.logging_data : null
+        last_receive_signal_log = istype(holder, /obj/item/grenade/chem_grenade) ? signal.logging_data : null
+        last_receive_signal_log = istype(holder, /obj/machinery/syndicatebomb) ? signal.logging_data : null
 
 	pulse()
 	audible_message("<span class='infoplain'>[icon2html(src, hearers(src))] *beep* *beep* *beep*</span>", null, hearing_range)
