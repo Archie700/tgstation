@@ -254,7 +254,7 @@
 		|| QDELETED(parent) \
 		|| QDELETED(real_location) \
 		|| QDELETED(user) \
-		|| !user.can_perform_action(parent, NEED_DEXTERITY) 
+		|| !user.can_perform_action(parent, NEED_DEXTERITY) \
 	)
 		return
 	for(var/mob/living/carbon/human/target in range(7,user))
